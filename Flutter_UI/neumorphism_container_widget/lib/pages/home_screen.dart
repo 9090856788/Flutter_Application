@@ -16,28 +16,56 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(40),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(14.0, 14.0),
-                    blurRadius: 25.0,
-                    spreadRadius: 5.0,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: 250,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(40),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(14.0, 14.0),
+                        blurRadius: 25.0,
+                        spreadRadius: 5.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.white,
+                        offset: Offset(-4.0, -14.0),
+                        blurRadius: 25.0,
+                        spreadRadius: 5.0,
+                      ),
+                    ],
                   ),
-                  BoxShadow(
-                    color: Colors.white,
-                    offset: Offset(-4.0, -14.0),
-                    blurRadius: 25.0,
-                    spreadRadius: 5.0,
+                  child: Icon(Icons.android, size: 80),
+                ),
+                Container(
+                  width: 250,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius: BorderRadius.circular(40),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(14.0, 14.0),
+                        blurRadius: 25.0,
+                        spreadRadius: 5.0,
+                      ),
+                      BoxShadow(
+                        color: Colors.white,
+                        offset: Offset(-4.0, -14.0),
+                        blurRadius: 25.0,
+                        spreadRadius: 5.0,
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              child: Icon(Icons.home, size: 80),
+                  child: Icon(Icons.apple, size: 80),
+                ),
+              ],
             ),
           ],
         ),
