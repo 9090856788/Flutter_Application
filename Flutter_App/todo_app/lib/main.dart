@@ -5,6 +5,8 @@ import './pages/home_screen.dart';
 void main() async {
   // initialize the hive database
   await Hive.initFlutter();
+  // open a box
+  await Hive.openBox('todo_box');
   runApp(const MyApp());
 }
 
