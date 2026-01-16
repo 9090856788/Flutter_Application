@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import '../data/database.dart';
 import '../utils/todo_tile.dart';
 import '../utils/dialog_box.dart';
 
@@ -10,18 +12,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // reference to the box
+  final _myBox = Hive.box('todo_box');
+  // text controller
   final _controller = TextEditingController();
 
   void saveNewTask() {
     setState(() {
-      toDoList.add([_controller.text, false]);
+      db.toDoList.add([_controller.text, false]);
       _controller.clear();
     });
     Navigator.of(context).pop();
+    db.updateDatabase();
   }
 
-  // create a list to hold our to-do items
-  List toDoList = [];
+  // take a reference of todoDatabase class
+  TodoDatabase db = TodoDatabase();
+
+  @override
+  void initState() {
+    // if this is the 1st time ever opening the app, then create default data
+    if (_myBox.get("TODOLIST") == null) {
+      db.createInitialData();
+    } else {
+      // else load the data from database
+      db.loadData();
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,20 +65,22 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
       ),
       body: ListView.builder(
-        itemCount: toDoList.length,
+        itemCount: db.toDoList.length,
         itemBuilder: (context, index) {
           return TodoTile(
-            taskName: toDoList[index][0],
-            taskCompleted: toDoList[index][1],
+            taskName: db.toDoList[index][0],
+            taskCompleted: db.toDoList[index][1],
             onChanged: (value) {
               // Handle checkbox state change
               setState(() {
-                toDoList[index][1] = value;
+                db.toDoList[index][1] = value;
+                db.updateDatabase();
               });
             },
             deleteFunction: (context) {
               setState(() {
-                toDoList.removeAt(index);
+                db.toDoList.removeAt(index);
+                db.updateDatabase();
               });
             },
           );

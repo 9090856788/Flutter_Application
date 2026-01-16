@@ -20,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
-                  width: 250,
-                  height: 250,
+                  width: 150,
+                  height: 150,
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(40),
@@ -43,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Icon(Icons.android, size: 80),
                 ),
                 Container(
-                  width: 250,
-                  height: 250,
+                  width: 150,
+                  height: 150,
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(40),
