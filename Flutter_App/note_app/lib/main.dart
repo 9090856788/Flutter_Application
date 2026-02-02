@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_database.dart';
 import './pages/home_screen.dart';
 
 void main() {
+  // initialize isar database
+  WidgetsFlutterBinding.ensureInitialized();
+  NoteDatabase.initializeIsar();
   runApp(const MyApp());
 }
 
