@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/models/note_database.dart';
+import 'package:provider/provider.dart';
 import './pages/home_screen.dart';
 
 void main() {
   // initialize isar database
   WidgetsFlutterBinding.ensureInitialized();
   NoteDatabase.initializeIsar();
-  runApp(const MyApp());
+  ChangeNotifierProvider(
+    create: (context) => NoteDatabase(),
+    child: const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {

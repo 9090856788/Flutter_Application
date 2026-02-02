@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:isar/isar.dart';
 import 'package:note_app/models/note.dart';
 import 'package:path_provider/path_provider.dart';
 
-class NoteDatabase {
+class NoteDatabase extends ChangeNotifier {
   // I N I T I L I Z A T I O N   O F   T H E   D A T A B A S E
   static Future<void> initializeIsar() async {
     final dir = await getApplicationDocumentsDirectory();
@@ -29,6 +30,9 @@ class NoteDatabase {
   Future<List<Note>> readNotes() async {
     final isar = Isar.getInstance()!;
     final notes = await isar.notes.where().findAll();
+    currentNotes.clear();
+    currentNotes.addAll(notes);
+    notifyListeners();
     return notes;
   }
 
