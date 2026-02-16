@@ -7,13 +7,13 @@ class AppTextStyles {
   AppTextStyles._();
 
   static const TextStyle heading = TextStyle(
-    color: AppColors.textPrimary,
+    color: AppColors.surface,
     fontSize: AppSizes.fontXLarge,
     fontWeight: FontWeight.bold,
   );
 
   static const TextStyle title = TextStyle(
-    color: AppColors.textPrimary,
+    color: AppColors.surface,
     fontSize: AppSizes.fontLarge,
     fontWeight: FontWeight.w600,
   );
@@ -24,7 +24,7 @@ class AppTextStyles {
   );
 
   static const TextStyle button = TextStyle(
-    color: Colors.white,
+    color: Colors.black,
     fontSize: AppSizes.fontRegular,
     fontWeight: FontWeight.w600,
   );
