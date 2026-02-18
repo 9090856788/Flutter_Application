@@ -1,6 +1,5 @@
 import 'package:e_commerce_app_kit/components/default_button.dart';
 import 'package:e_commerce_app_kit/constants/app_colors.dart';
-import 'package:e_commerce_app_kit/constants/size_config.dart';
 import 'package:e_commerce_app_kit/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
 
