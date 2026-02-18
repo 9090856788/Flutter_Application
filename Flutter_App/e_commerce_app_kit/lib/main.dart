@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_kit/routes.dart';
 import 'package:e_commerce_app_kit/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter E-Commerce App Kit",
-      home: SplashScreen(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }
