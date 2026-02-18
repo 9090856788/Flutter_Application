@@ -1,3 +1,4 @@
+import 'package:e_commerce_app_kit/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter E-Commerce App Kit",
-      home: Scaffold(),
+      home: SplashScreen(),
     );
   }
 }
