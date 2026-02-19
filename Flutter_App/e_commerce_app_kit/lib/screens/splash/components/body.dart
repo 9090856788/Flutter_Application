@@ -1,5 +1,6 @@
 import 'package:e_commerce_app_kit/components/default_button.dart';
 import 'package:e_commerce_app_kit/constants/app_colors.dart';
+import 'package:e_commerce_app_kit/screens/sign_in/sign_in_screen.dart';
 import 'package:e_commerce_app_kit/screens/splash/components/splash_content.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +73,12 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                     Spacer(flex: 3),
-                    DefaultButton(text: "GET STARTED", onPressed: () {}),
+                    DefaultButton(
+                      text: "GET STARTED",
+                      onPressed: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
+                    ),
                     Spacer(),
                   ],
                 ),
