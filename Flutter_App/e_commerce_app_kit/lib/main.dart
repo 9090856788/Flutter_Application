@@ -1,6 +1,7 @@
 import 'package:e_commerce_app_kit/routes.dart';
 import 'package:e_commerce_app_kit/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
         ),
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.black),
