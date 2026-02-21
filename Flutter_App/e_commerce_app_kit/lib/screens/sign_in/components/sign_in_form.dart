@@ -1,4 +1,5 @@
-import 'package:e_commerce_app_kit/constants/app_colors.dart';
+import 'package:e_commerce_app_kit/screens/sign_in/components/build_email_text_field.dart';
+import 'package:e_commerce_app_kit/screens/sign_in/components/build_password_text_field.dart';
 import 'package:flutter/material.dart';
 
 class SignInForm extends StatefulWidget {
@@ -14,58 +15,11 @@ class _SignInFormState extends State<SignInForm> {
     return Form(
       child: Column(
         children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              labelText: "Email",
-              hintText: "Enter your email",
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.textSecondary),
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                gapPadding: 10,
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 15,
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.textSecondary),
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                gapPadding: 10,
-              ),
-              suffixIcon: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Icon(
-                  Icons.email_outlined,
-                  color: AppColors.textSecondary,
-                ),
-              ),
-            ),
-          ),
+          BuildEmailTextfield(labelText: "Email", hintText: "Enter your email"),
           SizedBox(height: 30),
-          TextFormField(
-            obscureText: true,
-            decoration: const InputDecoration(
-              labelText: "Password",
-              hintText: "Enter your password",
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.textSecondary),
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                gapPadding: 10,
-              ),
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 15,
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.textSecondary),
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                gapPadding: 10,
-              ),
-              suffixIcon: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Icon(Icons.lock_outline, color: AppColors.textSecondary),
-              ),
-            ),
+          BuildPasswordTextField(
+            labelText: "Password",
+            hintText: "Enter your password",
           ),
         ],
       ),
