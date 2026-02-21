@@ -4,6 +4,7 @@ import 'package:e_commerce_app_kit/constants/app_colors.dart';
 import 'package:e_commerce_app_kit/constants/size_config.dart';
 import 'package:e_commerce_app_kit/components/header_title.dart';
 import 'package:e_commerce_app_kit/screens/sign_in/components/sign_in_form.dart';
+import 'package:e_commerce_app_kit/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -68,7 +69,7 @@ class _BodyState extends State<Body> {
                       ],
                     ),
                   ),
-                  DefaultButton(text: "Sign in", onPressed: () {}),
+                  DefaultButton(text: "Continue", onPressed: () {}),
                 ],
               ),
             ),
@@ -104,7 +105,9 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, SignUpScreen.routeName);
+                      },
                       child: Text(
                         " Sign Up",
                         style: TextStyle(
