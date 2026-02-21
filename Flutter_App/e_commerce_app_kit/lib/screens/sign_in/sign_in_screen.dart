@@ -23,11 +23,11 @@ class _SignInScreenState extends State<SignInScreen> {
         backgroundColor: AppColors.surface,
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Expanded(
-              flex: 2,
-              child: SizedBox(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: getProportionateScreenHeight(150),
                 child: Column(
                   children: [
                     Spacer(),
@@ -50,67 +50,59 @@ class _SignInScreenState extends State<SignInScreen> {
                   ],
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Padding(
+              Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 10,
                 ),
                 child: SignInForm(),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      right: 20.0,
-                      top: 0,
-                      bottom: 25.0,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Checkbox(
-                              value: false,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  value =
-                                      value!; // Update the checkbox value state
-                                  // Update the checkbox value state
-                                });
-                              },
-                            ),
-                            const Text("Remember me"),
-                          ],
-                        ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: const Text(
-                            "Forgot password",
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        right: 20.0,
+                        top: 0,
+                        bottom: 25.0,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Checkbox(
+                                value: false,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    value = value!;
+                                  });
+                                },
+                              ),
+                              const Text("Remember me"),
+                            ],
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: const Text(
+                              "Forgot password",
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  DefaultButton(text: "Sign in", onPressed: () {}),
-                ],
+                    DefaultButton(text: "Sign in", onPressed: () {}),
+                  ],
+                ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Column(
+              SizedBox(height: 30),
+              Column(
                 children: [
-                  Spacer(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -180,11 +172,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  SizedBox(height: 20),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
