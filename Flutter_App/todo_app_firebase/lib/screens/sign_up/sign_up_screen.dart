@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:todo_app_firebase/components/build_email_text_field.dart';
 import 'package:todo_app_firebase/components/build_password_text_field.dart';
 import 'package:todo_app_firebase/components/default_button.dart';
-import 'package:todo_app_firebase/screens/sign_up/sign_up_screen.dart';
+import 'package:todo_app_firebase/screens/sign_in/sign_in_screen.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: MediaQuery.of(context).size.height * 0.3,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("images/7.png"),
+                    image: AssetImage("images/4.png"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -44,6 +44,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       labelText: "Password",
                       hintText: "Enter your password",
                     ),
+                    SizedBox(height: 30),
+                    BuildPasswordTextField(
+                      labelText: "Confirm Password",
+                      hintText: "Confirm your password",
+                    ),
                   ],
                 ),
               ),
@@ -59,16 +64,16 @@ class _SignInScreenState extends State<SignInScreen> {
                       SizedBox(width: 5),
                       GestureDetector(
                         onTap: () {
-                          // Navigate to the registration screen
+                          // Navigate to the sign in screen
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => SignInScreen(),
                             ),
                           );
                         },
                         child: Text(
-                          "Sign Up",
+                          "Sign In",
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
@@ -83,9 +88,13 @@ class _SignInScreenState extends State<SignInScreen> {
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: DefaultButton(
-                  text: "SIGN IN",
+                  text: "SIGN UP",
                   onPressed: () {
-                    // Handle login logic here
+                    // Handle sign up logic here
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignInScreen()),
+                    );
                   },
                 ),
               ),

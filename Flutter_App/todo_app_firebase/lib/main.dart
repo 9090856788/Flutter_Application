@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app_firebase/screens/sign_in/sign_in_screen.dart';
+import 'package:todo_app_firebase/screens/sign_up/sign_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
