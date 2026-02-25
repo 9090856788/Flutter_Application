@@ -5,11 +5,9 @@ class BuildPasswordTextField extends StatefulWidget {
     super.key,
     required this.labelText,
     required this.hintText,
-    this.controller,
   });
   final String labelText;
   final String hintText;
-  final TextEditingController? controller;
 
   @override
   State<BuildPasswordTextField> createState() => _BuildPasswordTextFieldState();
@@ -17,25 +15,10 @@ class BuildPasswordTextField extends StatefulWidget {
 
 class _BuildPasswordTextFieldState extends State<BuildPasswordTextField> {
   bool _obscureText = true;
-  late final TextEditingController _controller;
-  @override
-  void initState() {
-    super.initState();
-    _controller = widget.controller ?? TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    if (widget.controller == null) {
-      _controller.dispose();
-    }
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: _controller,
       obscureText: _obscureText,
       decoration: InputDecoration(
         labelText: widget.labelText,

@@ -15,6 +15,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "Todo App Firebase", home: const SignInScreen());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "Todo App Firebase",
+      home: const SignInScreen(),
+    );
   }
 }

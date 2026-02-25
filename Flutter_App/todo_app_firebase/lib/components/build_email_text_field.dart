@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class BuildEmailTextfield extends StatefulWidget {
   final String labelText;
   final String hintText;
-  final TextEditingController? controller;
 
   const BuildEmailTextfield({
     super.key,
     required this.labelText,
     required this.hintText,
-    required this.controller,
   });
 
   @override
@@ -17,26 +15,9 @@ class BuildEmailTextfield extends StatefulWidget {
 }
 
 class _BuildEmailTextfieldState extends State<BuildEmailTextfield> {
-  late final TextEditingController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = widget.controller ?? TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    if (widget.controller == null) {
-      _controller.dispose();
-    }
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: _controller,
       decoration: InputDecoration(
         labelText: widget.labelText,
         hintText: widget.hintText,
