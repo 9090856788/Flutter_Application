@@ -5,7 +5,8 @@ import 'package:todo_app_firebase/components/default_button.dart';
 import 'package:todo_app_firebase/screens/sign_in/sign_in_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+  final VoidCallback show;
+  const SignUpScreen({super.key, required this.show});
 
   @override
   State<SignUpScreen> createState() => _SignUpScreenState();
@@ -68,7 +69,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignInScreen(),
+                              builder: (context) => SignInScreen(show: () {}),
                             ),
                           );
                         },
@@ -93,7 +94,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     // Handle sign up logic here
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignInScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => SignInScreen(show: () {}),
+                      ),
                     );
                   },
                 ),
