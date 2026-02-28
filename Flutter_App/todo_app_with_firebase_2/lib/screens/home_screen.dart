@@ -9,7 +9,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool today = true, tomorrow = false, next_week = false;
+  bool today = true, tomorrow = false, nextWeek = false;
   bool suggest = false;
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           today = true;
                           tomorrow = false;
-                          next_week = false;
+                          nextWeek = false;
                           setState(() {});
                         },
                       ),
@@ -63,18 +63,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           today = false;
                           tomorrow = true;
-                          next_week = false;
+                          nextWeek = false;
                           setState(() {});
                         },
                       ),
                       FilterButton(
                         label: "Next Week",
-                        isSelected: next_week,
+                        isSelected: nextWeek,
                         width: 120,
                         onTap: () {
                           today = false;
                           tomorrow = false;
-                          next_week = true;
+                          nextWeek = true;
                           setState(() {});
                         },
                       ),
