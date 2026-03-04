@@ -16,6 +16,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("Network Connectivity"),
         centerTitle: true,
       ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text("Check Connectivity"),
+        ),
+      ),
     );
   }
 }
