@@ -1,16 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:network_connectivity/main.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
+Future<bool> isNetworkAvailable() async {
+  var result = await Connectivity().checkConnectivity();
 
-  @override
-  State<MyWidget> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<MyWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  return result == ConnectivityResult.none ? false : true;
 }
